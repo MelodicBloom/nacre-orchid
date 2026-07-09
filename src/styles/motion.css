@@ -1,0 +1,83 @@
+@keyframes bloom-in {
+  from { opacity: 0; transform: scale(0.96); filter: blur(4px); }
+  to   { opacity: 1; transform: scale(1);    filter: blur(0);   }
+}
+
+@keyframes veil-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}
+
+@keyframes settle-in {
+  from { opacity: 0; transform: scale(1.02); }
+  to   { opacity: 1; transform: scale(1);    }
+}
+
+@keyframes shimmer {
+  from { background-position: -200% center; }
+  to   { background-position:  200% center; }
+}
+
+@keyframes orbit-pulse {
+  0%, 100% { opacity: 0.4; transform: scale(1);    }
+  50%       { opacity: 0.8; transform: scale(1.04); }
+}
+
+.reliquary-hero__orb {
+  position: absolute; top: 50%; left: 50%;
+  width: min(600px, 80vw); height: min(600px, 80vw);
+  border-radius: var(--radius-full);
+  background: radial-gradient(circle, rgba(168,196,204,0.12) 0%, rgba(192,132,176,0.06) 40%, transparent 70%);
+  transform: translate(-50%, -50%);
+  animation: orbit-pulse 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.studio-preview__orb {
+  width: 200px; height: 200px;
+  margin: var(--space-6) auto;
+  border-radius: var(--radius-full);
+  background: var(--surface-abalone);
+  box-shadow: var(--glow-opal);
+  animation: orbit-pulse 4s ease-in-out infinite;
+}
+
+.lace-modal {
+  border: 1px solid rgba(200,168,75,0.3);
+  border-radius: var(--radius-xl);
+  background: rgba(14,13,15,0.92);
+  backdrop-filter: blur(24px);
+  padding: 0;
+  width: min(560px, 92vw);
+  max-height: 90dvh;
+  overflow-y: auto;
+  color: var(--color-pearl);
+  animation: veil-in var(--duration-mid) var(--ease-veil) both;
+}
+.lace-modal::backdrop { background: rgba(0,0,0,0.7); backdrop-filter: blur(4px); }
+.lace-modal__veil {
+  position: sticky; top: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+  animation: shimmer 3s linear infinite;
+  background-size: 200% 100%;
+}
+.lace-modal__body { padding: var(--space-6); position: relative; }
+.lace-modal__close {
+  position: absolute; top: var(--space-4); right: var(--space-4);
+  background: transparent; border: none; color: var(--color-pearl);
+  font-size: 1.5rem; cursor: pointer; opacity: 0.6;
+  transition: opacity var(--duration-fast);
+}
+.lace-modal__close:hover { opacity: 1; }
+.lace-modal__close:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+.lace-modal__title    { font-size: 1.5rem; margin-bottom: var(--space-4); color: var(--color-pearl); }
+.lace-modal__story    { font-size: 0.9rem; line-height: 1.7; color: var(--color-opal); margin-bottom: var(--space-5); }
+.lace-modal__materials { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-5); }
+.lace-modal__meters   { margin-bottom: var(--space-5); }
+.lace-modal__recipe   { margin-bottom: var(--space-5); }
+.lace-modal__prompt {
+  font-size: 0.8rem; color: var(--color-gold); opacity: 0.8;
+  background: rgba(200,168,75,0.06); border: 1px solid rgba(200,168,75,0.15);
+  border-radius: var(--radius-md); padding: var(--space-4);
+  white-space: pre-wrap;
+}

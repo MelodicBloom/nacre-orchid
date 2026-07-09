@@ -1,0 +1,97 @@
+.cursor-light {
+  position: fixed; top: 0; left: 0;
+  width: 300px; height: 300px;
+  border-radius: var(--radius-full);
+  background: radial-gradient(circle, rgba(168,196,204,0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  will-change: transform;
+}
+
+.nacre-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  background: var(--surface-labradorite);
+  border: 1px solid rgba(200,168,75,0.2);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform var(--duration-mid) var(--ease-bloom), box-shadow var(--duration-mid);
+}
+.nacre-card:hover { transform: translateY(-2px); box-shadow: var(--glow-opal); }
+.nacre-card:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+.nacre-card__surface { height: 160px; background: var(--surface-abalone); position: relative; }
+.nacre-card__body { padding: var(--space-4); }
+.nacre-card__title { font-size: 1rem; color: var(--color-pearl); margin-bottom: var(--space-2); }
+.nacre-card__meaning { font-size: 0.8rem; color: var(--color-opal); opacity: 0.8; margin-bottom: var(--space-3); }
+.nacre-card__tags { display: flex; flex-wrap: wrap; gap: var(--space-1); }
+
+.material-tag {
+  font-size: 0.7rem; letter-spacing: 0.06em;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-full);
+  border: 1px solid currentColor;
+  text-transform: capitalize;
+}
+.material-tag--pearl       { color: var(--color-pearl);       border-color: rgba(240,238,232,0.3); }
+.material-tag--orchid      { color: var(--color-orchid);      border-color: rgba(192,132,176,0.3); }
+.material-tag--gold        { color: var(--color-gold);        border-color: rgba(200,168,75,0.3);  }
+.material-tag--abalone     { color: var(--color-abalone);     border-color: rgba(123,158,166,0.3); }
+.material-tag--opal        { color: var(--color-opal);        border-color: rgba(168,196,204,0.3); }
+.material-tag--lace        { color: var(--color-lace);        border-color: rgba(245,240,232,0.3); }
+.material-tag--labradorite { color: var(--color-labradorite); border-color: rgba(42,48,64,0.5);    }
+
+.abalone-tile { position: relative; border-radius: var(--radius-lg); overflow: hidden; }
+.abalone-tile--shallow { background: var(--surface-opal); }
+.abalone-tile--mid     { background: var(--surface-abalone); }
+.abalone-tile--deep    { background: var(--surface-labradorite); }
+.abalone-tile__iridescence {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(168,196,204,0.1) 0%, transparent 50%, rgba(200,168,75,0.05) 100%);
+  pointer-events: none;
+}
+.abalone-tile__content { position: relative; z-index: 1; }
+
+.pearl-button {
+  position: relative;
+  border: 1px solid rgba(200,168,75,0.5);
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: var(--color-pearl);
+  font-family: inherit;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  padding: var(--space-3) var(--space-6);
+  cursor: pointer;
+  overflow: hidden;
+  transition: box-shadow var(--duration-fast), transform var(--duration-fast) var(--ease-inlay);
+}
+.pearl-button--primary   { background: rgba(200,168,75,0.1); }
+.pearl-button--secondary { border-color: rgba(240,238,232,0.3); }
+.pearl-button:hover       { box-shadow: var(--glow-pearl); }
+.pearl-button:active      { transform: scale(0.97); }
+.pearl-button:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+.pearl-button__inner { position: relative; z-index: 1; }
+
+.token-chip {
+  font-size: 0.75rem; letter-spacing: 0.06em;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(240,238,232,0.2);
+  background: transparent;
+  color: var(--color-pearl);
+  cursor: pointer;
+  transition: background var(--duration-fast), border-color var(--duration-fast);
+}
+.token-chip--active,
+.token-chip:hover {
+  background: rgba(200,168,75,0.15);
+  border-color: rgba(200,168,75,0.5);
+  color: var(--color-gold);
+}
+.token-chip:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+
+.semantic-meter { display: grid; grid-template-columns: 1fr auto; gap: var(--space-2); align-items: center; margin-bottom: var(--space-3); }
+.semantic-meter__label { font-size: 0.75rem; letter-spacing: 0.06em; color: var(--color-opal); grid-column: 1; }
+.semantic-meter__track { grid-column: span 2; height: 3px; background: rgba(240,238,232,0.1); border-radius: var(--radius-full); overflow: hidden; }
+.semantic-meter__fill  { height: 100%; background: var(--surface-opal); border-radius: var(--radius-full); transition: width var(--duration-slow) var(--ease-settle); }
+.semantic-meter__value { font-size: 0.7rem; color: var(--color-pearl); opacity: 0.5; }
