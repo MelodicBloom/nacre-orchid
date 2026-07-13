@@ -1,0 +1,120 @@
+{
+  "$schema": "https://design-tokens.org/schema/1.0/",
+  "$metadata": {
+    "name": "NACRE//ORCHID Design Tokens",
+    "version": "1.0.0",
+    "repo": "MelodicBloom/nacre-orchid",
+    "source": "src/styles/tokens.css",
+    "format": "W3C DTCG",
+    "updated": "2026-07-11"
+  },
+
+  "color": {
+    "$type": "color",
+    "pearl":       { "$value": "#f0eee8", "$description": "Saved, memory, completion, focus state" },
+    "orchid":      { "$value": "#c084b0", "$description": "Creation, bloom, transformation" },
+    "gold":        { "$value": "#c8a84b", "$description": "Syntax, boundary, premium state, selection" },
+    "abalone":     { "$value": "#7b9ea6", "$description": "Artifact depth, gallery tile, active surface" },
+    "opal":        { "$value": "#a8c4cc", "$description": "Responsive intelligence, hover, listening, success" },
+    "labradorite": { "$value": "#2a3040", "$description": "Dark mineral field, background depth" },
+    "lacquer":     { "$value": "#0e0d0f", "$description": "Stage, contrast, atmosphere" },
+    "lace":        { "$value": "#f5f0e8cc", "$description": "Veil, preview, hidden layer, modal surface" }
+  },
+
+  "surface": {
+    "$type": "color",
+    "hero":    { "$value": "linear-gradient(160deg, #0e0d0f 0%, #1a1824 50%, #0e1218 100%)", "$description": "Hero background" },
+    "gallery": { "$value": "#0e0d0f", "$description": "Gallery page background" },
+    "card":    { "$value": "linear-gradient(135deg, #1a2830 0%, #0e1820 100%)", "$description": "NacreCard base surface" },
+    "modal":   { "$value": "rgba(245, 240, 232, 0.96)", "$description": "LaceModal vellum surface" },
+    "nav":     { "$value": "rgba(14, 13, 15, 0.92)", "$description": "SiteNav backdrop" }
+  },
+
+  "radius": {
+    "$type": "dimension",
+    "none":   { "$value": "0px" },
+    "sm":     { "$value": "4px" },
+    "md":     { "$value": "8px" },
+    "lg":     { "$value": "16px" },
+    "xl":     { "$value": "24px" },
+    "full":   { "$value": "9999px" },
+    "card":   { "$value": "12px",   "$description": "NacreCard, AbaloneTile" },
+    "modal":  { "$value": "16px",   "$description": "LaceModal" },
+    "button": { "$value": "6px",    "$description": "PearlButton" },
+    "chip":   { "$value": "9999px", "$description": "TokenChip" }
+  },
+
+  "spacing": {
+    "$type": "dimension",
+    "0":  { "$value": "0px" },
+    "1":  { "$value": "4px" },
+    "2":  { "$value": "8px" },
+    "3":  { "$value": "12px" },
+    "4":  { "$value": "16px" },
+    "5":  { "$value": "20px" },
+    "6":  { "$value": "24px" },
+    "8":  { "$value": "32px" },
+    "10": { "$value": "40px" },
+    "12": { "$value": "48px" },
+    "16": { "$value": "64px" },
+    "20": { "$value": "80px" },
+    "24": { "$value": "96px" },
+    "32": { "$value": "128px" }
+  },
+
+  "shadow": {
+    "$type": "shadow",
+    "card":         { "$value": "0 2px 16px rgba(0,0,0,0.4), 0 0 0 1px rgba(200,168,75,0.08)", "$description": "NacreCard resting" },
+    "card-hover":   { "$value": "0 8px 40px rgba(0,0,0,0.6), 0 0 0 1px rgba(200,168,75,0.2)", "$description": "NacreCard hover" },
+    "modal":        { "$value": "0 24px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(200,168,75,0.15)", "$description": "LaceModal elevation" },
+    "button":       { "$value": "0 0 0 0 rgba(200,168,75,0)", "$description": "PearlButton resting" },
+    "button-focus": { "$value": "0 0 0 2px #0e0d0f, 0 0 0 4px #c8a84b", "$description": "Focus ring" }
+  },
+
+  "glow": {
+    "$type": "shadow",
+    "pearl":  { "$value": "0 0 24px rgba(240,238,232,0.15)", "$description": "Pearl save/focus aura" },
+    "orchid": { "$value": "0 0 32px rgba(192,132,176,0.25)", "$description": "Orchid bloom aura" },
+    "gold":   { "$value": "0 0 16px rgba(200,168,75,0.3)",  "$description": "Gold selection glow" },
+    "opal":   { "$value": "0 0 40px rgba(168,196,204,0.2)", "$description": "Opal hover aura" },
+    "cursor": { "$value": "radial-gradient(circle 180px, rgba(200,168,75,0.08) 0%, transparent 70%)", "$description": "CursorLight prism bloom" }
+  },
+
+  "motion": {
+    "easing": {
+      "$type": "cubicBezier",
+      "bloom":  { "$value": [0.22, 1, 0.36, 1],        "$description": "Reveal, new understanding" },
+      "veil":   { "$value": [0.22, 1, 0.36, 1],        "$description": "Modal appear/disappear" },
+      "settle": { "$value": [0.33, 1, 0.68, 1],        "$description": "Success, saved state" },
+      "inlay":  { "$value": [0.4, 0, 0.2, 1],          "$description": "Button press, commitment" },
+      "orbit":  { "$value": [0.45, 0.05, 0.55, 0.95],  "$description": "Loading orbit loop" }
+    },
+    "duration": {
+      "$type": "duration",
+      "instant": { "$value": "0ms" },
+      "fast":    { "$value": "150ms", "$description": "Inlay, ripple" },
+      "mid":     { "$value": "300ms", "$description": "Veil, hover transitions" },
+      "slow":    { "$value": "500ms", "$description": "Bloom, settle" },
+      "orbit":   { "$value": "5000ms","$description": "Orbit loop" }
+    }
+  },
+
+  "z-index": {
+    "$type": "number",
+    "base":    { "$value": 0 },
+    "surface": { "$value": 10 },
+    "overlay": { "$value": 20 },
+    "modal":   { "$value": 30 },
+    "cursor":  { "$value": 40 }
+  },
+
+  "focus": {
+    "ring": {
+      "$type": "shadow",
+      "default": {
+        "$value": "0 0 0 2px #0e0d0f, 0 0 0 4px #c8a84b",
+        "$description": "Gold double-ring focus indicator — global :focus-visible"
+      }
+    }
+  }
+}
