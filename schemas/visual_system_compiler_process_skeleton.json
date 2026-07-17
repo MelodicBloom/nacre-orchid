@@ -1,0 +1,78 @@
+{
+  "project": {
+    "id": "nacre-orchid",
+    "name": "NACRE//ORCHID",
+    "thesis": "A luxury generative-art and design-system platform where pearl, orchid, lace, abalone, opal, labradorite, and gold cloisonne become product architecture, motion grammar, symbolic UX, and responsive storytelling.",
+    "governing_law": "Make the site feel like opal, but architect it like a newsroom."
+  },
+  "process": [
+    {
+      "gate": "G0",
+      "name": "Ingestion",
+      "output": "source inventory",
+      "pass_condition": "sources are labeled and trust-scored"
+    },
+    {
+      "gate": "G1",
+      "name": "Semantic Map",
+      "output": "meaning taxonomy",
+      "pass_condition": "every major motif has a UI assignment"
+    },
+    {
+      "gate": "G2",
+      "name": "Token Atlas",
+      "output": "implementable token values",
+      "pass_condition": "tokens map to components and states"
+    },
+    {
+      "gate": "G3",
+      "name": "Screen System",
+      "output": "use-case screen map",
+      "pass_condition": "each screen has a primary action"
+    },
+    {
+      "gate": "G4",
+      "name": "Component Kit",
+      "output": "component architecture",
+      "pass_condition": "states and accessibility are defined"
+    },
+    {
+      "gate": "G5",
+      "name": "Motion Effects",
+      "output": "animation/effect matrix",
+      "pass_condition": "each effect has semantic purpose and fallback"
+    },
+    {
+      "gate": "G6",
+      "name": "Prototype",
+      "output": "navigable vertical slice",
+      "pass_condition": "core flows work responsively"
+    },
+    {
+      "gate": "G7",
+      "name": "Engineering Hardening",
+      "output": "typed, tested, deployable app",
+      "pass_condition": "QA gates pass"
+    },
+    {
+      "gate": "G8",
+      "name": "Launch Case Study",
+      "output": "marketable system",
+      "pass_condition": "story, offer, proof, and docs complete"
+    }
+  ],
+  "decision_scoring": {
+    "product_value": 20,
+    "visual_identity_fit": 20,
+    "ux_clarity": 20,
+    "accessibility": 15,
+    "performance": 15,
+    "implementation_cost": 10,
+    "minimum_score": 70
+  },
+  "first_slice": {
+    "screens": ["Home", "Gallery", "Artifact Detail Modal", "Studio Preview"],
+    "defer": ["auth", "database", "marketplace", "full community", "audio engine", "video engine", "heavy WebGL"],
+    "required_components": ["ShellRoot", "CursorLight", "SiteNav", "PearlButton", "TokenChip", "SemanticMeter", "NacreCard", "AbaloneTile", "LaceModal", "ReliquaryHero", "ArtifactGrid", "StudioPreview"]
+  }
+}
