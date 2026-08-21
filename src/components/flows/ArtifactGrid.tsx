@@ -1,4 +1,6 @@
 'use client';
+"use client";
+
 import { useState } from 'react';
 import { artifacts } from '../../lib/artifacts';
 import { NacreCard } from '../surfaces/NacreCard';
